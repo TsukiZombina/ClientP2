@@ -1,5 +1,7 @@
 package Proyecto2;
 
+import java.rmi.Naming;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -28,23 +30,7 @@ public class GUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        jPanel1 = new javax.swing.JPanel();
-        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("practica2sd?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
-        practica2sdPUEntityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("practica2sdPU").createEntityManager();
-        divisasQuery = java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery("SELECT d.divisasNombre FROM Divisas d");
-        divisasList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : divisasQuery.getResultList();
-        ciudadQuery = java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery("SELECT c.ciudadNombre FROM Ciudad c");
-        ciudadList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : ciudadQuery.getResultList();
-        ciudadQuery1 = java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery("SELECT c.ciudadClima FROM Ciudad c WHERE c.ciudadNombre = 'Paris'");
-        ciudadList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : ciudadQuery1.getResultList();
-        peliculaQuery = java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery("SELECT p.peliculaNombre FROM Pelicula p");
-        peliculaList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : peliculaQuery.getResultList();
-        museoQuery = java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery("SELECT m.museoNombre FROM Museo m");
-        museoList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : museoQuery.getResultList();
-        obraQuery = java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery("SELECT o.obraNombre FROM Obra o");
-        obraList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : obraQuery.getResultList();
         jSeparator1 = new javax.swing.JSeparator();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jInternalFrameTurismo = new javax.swing.JInternalFrame();
@@ -105,46 +91,39 @@ public class GUI extends javax.swing.JFrame {
         jInternalFrameOtros = new javax.swing.JInternalFrame();
         jLabelServicios = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jInternalFrameTurismo.setVisible(true);
 
         jButtonConvertir.setText("Convertir");
+        jButtonConvertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConvertirActionPerformed(evt);
+            }
+        });
 
         jLabelConvertirA.setText("a");
 
-        jComboBoxDivisa2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${resultList}");
-        org.jdesktop.swingbinding.JComboBoxBinding jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, divisasQuery, eLProperty, jComboBoxDivisa2);
-        bindingGroup.addBinding(jComboBoxBinding);
+        jComboBoxDivisa2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "EUR", "GBP" }));
+        jComboBoxDivisa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxDivisa2ActionPerformed(evt);
+            }
+        });
 
         jLabelConversorDivisas.setFont(new java.awt.Font("MS UI Gothic", 1, 14)); // NOI18N
         jLabelConversorDivisas.setText("Conversor de Divisas");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        eLProperty = org.jdesktop.beansbinding.ELProperty.create("${resultList}");
-        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, divisasQuery, eLProperty, jComboBox1);
-        bindingGroup.addBinding(jComboBoxBinding);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "EUR", "GBP" }));
 
         jLabelClima.setFont(new java.awt.Font("MS UI Gothic", 0, 14)); // NOI18N
         jLabelClima.setText("Clima");
 
-        eLProperty = org.jdesktop.beansbinding.ELProperty.create("${resultList}");
-        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, ciudadQuery, eLProperty, jComboBox2);
-        bindingGroup.addBinding(jComboBoxBinding);
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jLabelGradosC.setFont(new java.awt.Font("MS UI Gothic", 0, 12)); // NOI18N
         jLabelGradosC.setText("ºC");
@@ -155,9 +134,6 @@ public class GUI extends javax.swing.JFrame {
         jLabelHora.setFont(new java.awt.Font("MS UI Gothic", 0, 14)); // NOI18N
         jLabelHora.setText("Hora");
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, ciudadQuery1, org.jdesktop.beansbinding.ELProperty.create("${singleResult}"), jTextPaneClima, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-
         jScrollPane2.setViewportView(jTextPaneClima);
 
         jScrollPane3.setViewportView(jTextPane2);
@@ -167,7 +143,7 @@ public class GUI extends javax.swing.JFrame {
         jInternalFrameTurismoLayout.setHorizontalGroup(
             jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                .addContainerGap(164, Short.MAX_VALUE)
+                .addContainerGap(184, Short.MAX_VALUE)
                 .addComponent(jTextFieldDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(jComboBoxDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,10 +152,10 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
-                .addComponent(jTextFieldDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jTextFieldDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(jButtonConvertir)
-                .addGap(94, 94, 94))
+                .addGap(23, 23, 23))
             .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator2)
@@ -199,12 +175,13 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(161, 161, 161))))
             .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
                 .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabelHora)
-                        .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                            .addGap(191, 191, 191)
-                            .addComponent(jLabelInfoCiudad)
-                            .addGap(42, 42, 42)))
+                    .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelHora)
+                            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                                .addComponent(jLabelInfoCiudad)
+                                .addGap(42, 42, 42))))
                     .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
                         .addGap(211, 211, 211)
                         .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,9 +209,9 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelClima)
-                    .addComponent(jLabelHora))
+                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelHora, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelClima))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -368,10 +345,6 @@ public class GUI extends javax.swing.JFrame {
 
         jInternalFrameEyC.setVisible(true);
 
-        eLProperty = org.jdesktop.beansbinding.ELProperty.create("${resultList}");
-        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, peliculaQuery, eLProperty, jComboBoxPeliculas);
-        bindingGroup.addBinding(jComboBoxBinding);
-
         jLabelPelicula.setFont(new java.awt.Font("MS UI Gothic", 0, 12)); // NOI18N
         jLabelPelicula.setText("Película:");
 
@@ -411,15 +384,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(jTableCineHorario);
 
-        eLProperty = org.jdesktop.beansbinding.ELProperty.create("${resultList}");
-        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, museoQuery, eLProperty, jComboBoxMuseos);
-        bindingGroup.addBinding(jComboBoxBinding);
-
         jScrollPane7.setViewportView(jTextPaneMuseos);
-
-        eLProperty = org.jdesktop.beansbinding.ELProperty.create("${resultList}");
-        jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, obraQuery, eLProperty, jComboBox3);
-        bindingGroup.addBinding(jComboBoxBinding);
 
         jLabelObra.setFont(new java.awt.Font("MS UI Gothic", 0, 12)); // NOI18N
         jLabelObra.setText("Obra:");
@@ -541,11 +506,11 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelServicios)
-                .addGap(236, 236, 236))
             .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(252, 252, 252)
+                .addComponent(jLabelServicios)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -558,10 +523,35 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        bindingGroup.bind();
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+       // System.out.println("HOLA");
+        jTextPane2.setText("Hola");
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jButtonConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvertirActionPerformed
+        //Checar que el combo box si esté seleccionado
+        int divisa1 = jComboBoxDivisa2.getSelectedIndex();
+        int divisa2 = jComboBox1.getSelectedIndex();
+        
+        //Checar que la cantidad sea numerica
+        double cantidad = Double.parseDouble(jTextFieldDivisa1.getText());
+        
+        //Turismo	
+        try {
+            ITurismo turismo;
+            turismo = (ITurismo)Naming.lookup("rmi://localhost:1099/Turismo");
+            jTextFieldDivisa2.setText(String.valueOf(turismo.convertirDivisa(divisa1+1, cantidad, divisa2+1)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        } 
+    }//GEN-LAST:event_jButtonConvertirActionPerformed
+
+    private void jComboBoxDivisa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDivisa2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxDivisa2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -599,13 +589,6 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.util.List<Proyecto2.Ciudad> ciudadList;
-    private java.util.List<Proyecto2.Ciudad> ciudadList1;
-    private javax.persistence.Query ciudadQuery;
-    private javax.persistence.Query ciudadQuery1;
-    private java.util.List<Proyecto2.Divisas> divisasList;
-    private javax.persistence.Query divisasQuery;
-    private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButtonConvertir;
     private javax.swing.JButton jButtonUbicar;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -637,7 +620,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTeatro;
     private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JLabel jLabelUbicacion;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -666,13 +648,5 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPaneMuseos;
     private javax.swing.JTextPane jTextPaneTeatro;
     private javax.swing.JTextPane jTextPaneTelefono;
-    private java.util.List<Proyecto2.Museo> museoList;
-    private javax.persistence.Query museoQuery;
-    private java.util.List<Proyecto2.Obra> obraList;
-    private javax.persistence.Query obraQuery;
-    private java.util.List<Proyecto2.Pelicula> peliculaList;
-    private javax.persistence.Query peliculaQuery;
-    private javax.persistence.EntityManager practica2sdPUEntityManager;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

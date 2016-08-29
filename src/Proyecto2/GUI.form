@@ -1,159 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
-    <Component class="javax.persistence.EntityManager" name="entityManager">
-      <Properties>
-        <Property name="persistenceUnit" type="java.lang.String" value="practica2sd?zeroDateTimeBehavior=convertToNullPU"/>
-      </Properties>
-    </Component>
-    <Component class="javax.persistence.EntityManager" name="practica2sdPUEntityManager">
-      <Properties>
-        <Property name="persistenceUnit" type="java.lang.String" value="practica2sdPU"/>
-      </Properties>
-    </Component>
-    <Component class="javax.persistence.Query" name="divisasQuery">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT d FROM Divisas d"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="practica2sdPUEntityManager"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery(&quot;SELECT d.divisasNombre FROM Divisas d&quot;)"/>
-      </AuxValues>
-    </Component>
-    <Component class="java.util.List" name="divisasList">
-      <Properties>
-        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="divisasQuery"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Proyecto2.Divisas&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.persistence.Query" name="ciudadQuery">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT c FROM Ciudad c"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="practica2sdPUEntityManager"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery(&quot;SELECT c.ciudadNombre FROM Ciudad c&quot;)"/>
-      </AuxValues>
-    </Component>
-    <Component class="java.util.List" name="ciudadList">
-      <Properties>
-        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="ciudadQuery"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Proyecto2.Ciudad&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.persistence.Query" name="ciudadQuery1">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT c FROM Ciudad c"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="practica2sdPUEntityManager"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery(&quot;SELECT c.ciudadClima FROM Ciudad c WHERE c.ciudadNombre = &apos;Paris&apos;&quot;)"/>
-      </AuxValues>
-    </Component>
-    <Component class="java.util.List" name="ciudadList1">
-      <Properties>
-        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="ciudadQuery1"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Proyecto2.Ciudad&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.persistence.Query" name="peliculaQuery">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT p FROM Pelicula p"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="practica2sdPUEntityManager"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery(&quot;SELECT p.peliculaNombre FROM Pelicula p&quot;)"/>
-      </AuxValues>
-    </Component>
-    <Component class="java.util.List" name="peliculaList">
-      <Properties>
-        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="peliculaQuery"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Proyecto2.Pelicula&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.persistence.Query" name="museoQuery">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT m FROM Museo m"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="practica2sdPUEntityManager"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery(&quot;SELECT m.museoNombre FROM Museo m&quot;)"/>
-      </AuxValues>
-    </Component>
-    <Component class="java.util.List" name="museoList">
-      <Properties>
-        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="museoQuery"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Proyecto2.Museo&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.persistence.Query" name="obraQuery">
-      <Properties>
-        <Property name="query" type="java.lang.String" value="SELECT o FROM Obra o"/>
-        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
-          <ComponentRef name="practica2sdPUEntityManager"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="java.beans.Beans.isDesignTime() ? null : practica2sdPUEntityManager.createQuery(&quot;SELECT o.obraNombre FROM Obra o&quot;)"/>
-      </AuxValues>
-    </Component>
-    <Component class="java.util.List" name="obraList">
-      <Properties>
-        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
-          <ComponentRef name="obraQuery"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Proyecto2.Obra&gt;"/>
-      </AuxValues>
-    </Component>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -177,12 +24,12 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabelServicios" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
-          </Group>
           <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
+              <Component id="jLabelServicios" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -221,7 +68,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="164" max="32767" attributes="0"/>
+                      <EmptySpace pref="184" max="32767" attributes="0"/>
                       <Component id="jTextFieldDivisa1" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jComboBoxDivisa2" min="-2" max="-2" attributes="0"/>
@@ -230,10 +77,10 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="jTextFieldDivisa2" min="-2" pref="32" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jTextFieldDivisa2" min="-2" pref="94" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="jButtonConvertir" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -259,12 +106,14 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabelHora" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
-                                  <Component id="jLabelInfoCiudad" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabelHora" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabelInfoCiudad" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -300,9 +149,9 @@
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabelClima" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabelHora" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelClima" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -324,6 +173,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Convertir"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonConvertirActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelConvertirA">
               <Properties>
@@ -334,16 +186,16 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="0" value="USD"/>
+                    <StringItem index="1" value="MXN"/>
+                    <StringItem index="2" value="EUR"/>
+                    <StringItem index="3" value="GBP"/>
                   </StringArray>
                 </Property>
               </Properties>
-              <BindingProperties>
-                <BindingProperty name="elements" source="divisasQuery" sourcePath="${resultList}" target="jComboBoxDivisa2" targetPath="elements" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxDivisa2ActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -360,16 +212,13 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="0" value="USD"/>
+                    <StringItem index="1" value="MXN"/>
+                    <StringItem index="2" value="EUR"/>
+                    <StringItem index="3" value="GBP"/>
                   </StringArray>
                 </Property>
               </Properties>
-              <BindingProperties>
-                <BindingProperty name="elements" source="divisasQuery" sourcePath="${resultList}" target="jComboBox1" targetPath="elements" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -385,9 +234,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox2">
-              <BindingProperties>
-                <BindingProperty name="elements" source="ciudadQuery" sourcePath="${resultList}" target="jComboBox2" targetPath="elements" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox2ActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -424,11 +273,6 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
                 <Component class="javax.swing.JTextPane" name="jTextPaneClima">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="ciudadQuery1" sourcePath="${singleResult}" target="jTextPaneClima" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
               </SubComponents>
             </Container>
@@ -803,9 +647,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JComboBox" name="jComboBoxPeliculas">
-              <BindingProperties>
-                <BindingProperty name="elements" source="peliculaQuery" sourcePath="${resultList}" target="jComboBoxPeliculas" targetPath="elements" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -883,9 +724,6 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JComboBox" name="jComboBoxMuseos">
-              <BindingProperties>
-                <BindingProperty name="elements" source="museoQuery" sourcePath="${resultList}" target="jComboBoxMuseos" targetPath="elements" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -902,9 +740,6 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JComboBox" name="jComboBox3">
-              <BindingProperties>
-                <BindingProperty name="elements" source="obraQuery" sourcePath="${resultList}" target="jComboBox3" targetPath="elements" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
