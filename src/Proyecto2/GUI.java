@@ -1,6 +1,8 @@
 package Proyecto2;
 
 import java.rmi.Naming;
+import java.util.ArrayList;
+import java.util.Vector;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -204,7 +206,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
                         .addComponent(jLabelClima)
-                        .addContainerGap(435, Short.MAX_VALUE))
+                        .addContainerGap(462, Short.MAX_VALUE))
                     .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -363,7 +365,7 @@ public class GUI extends javax.swing.JFrame {
                                                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jButtonDatos)))))
-                        .addGap(0, 55, Short.MAX_VALUE)))
+                        .addGap(0, 82, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jInternalFrameGeograficosLayout.setVerticalGroup(
@@ -395,9 +397,7 @@ public class GUI extends javax.swing.JFrame {
                             .addGroup(jInternalFrameGeograficosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jInternalFrameGeograficosLayout.createSequentialGroup()
                                     .addGroup(jInternalFrameGeograficosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jInternalFrameGeograficosLayout.createSequentialGroup()
-                                            .addGap(9, 9, 9)
-                                            .addComponent(jLabelTelefono))
+                                        .addComponent(jLabelTelefono)
                                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(18, 18, 18)
                                     .addComponent(jLabelCorreo))
@@ -514,7 +514,7 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
                         .addGap(255, 255, 255)
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         jInternalFrameEyCLayout.setVerticalGroup(
             jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -685,7 +685,7 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 7, Short.MAX_VALUE))
+                                .addGap(0, 34, Short.MAX_VALUE))
                             .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
@@ -724,9 +724,9 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameOtrosLayout.createSequentialGroup()
-                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldMontoDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldPorcentajedescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldPorcentajedescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldMontoDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(40, 40, 40)
                         .addComponent(jLabelIntereses)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -740,10 +740,10 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextFieldMontoInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextFieldInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextFieldInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
@@ -758,7 +758,7 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(252, 252, 252)
                 .addComponent(jLabelServicios)
@@ -806,7 +806,38 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxDivisa1ActionPerformed
 
     private void jButtonDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDatosActionPerformed
-        // TODO add your handling code here:
+        String profesor = jTextFieldNombreProfesor.getText();
+        IGeografico geografico;
+        try {
+            geografico = (IGeografico)Naming.lookup("rmi://localhost:1099/Geografico");
+            Profesor prof = geografico.getDatosProfesor(profesor);
+            Vector<String> mensaje = new Vector<String>();
+            if(prof == null){
+                jTextPaneTelefono.setText("Profesor no encontrado");
+                jTextPaneCorreo.setText("Profesor no encontrado");
+                jTextPaneCubiculo.setText("Profesor no encontrado");
+                mensaje.addElement("Profesor no encontrado");
+                jListMaterias.setListData(mensaje);
+            }else{
+                jTextFieldNombreProfesor.setText(prof.getNombre());
+                jTextPaneTelefono.setText(prof.getTelefono());
+                jTextPaneCorreo.setText(prof.getCorreo());
+                jTextPaneCubiculo.setText(prof.getCubiculo());
+                
+                
+                ArrayList<String> ueas = geografico.materiasImpartidas(profesor);
+                if(ueas.isEmpty()){
+                    mensaje.addElement("No ha impartido uea");
+                    jListMaterias.setListData(mensaje);
+                }else{
+                    String[] array = new String[ueas.size()];
+                    jListMaterias.setListData(ueas.toArray(array));
+                }
+                
+            }                  
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jButtonDatosActionPerformed
 
     /**
