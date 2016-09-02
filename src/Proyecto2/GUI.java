@@ -3,6 +3,7 @@ package Proyecto2;
 import java.rmi.Naming;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.TimeZone;
 import java.util.Vector;
 
 /*
@@ -34,26 +35,15 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator9 = new javax.swing.JSeparator();
+        jSeparator10 = new javax.swing.JSeparator();
+        jSeparator11 = new javax.swing.JSeparator();
+        jSeparator12 = new javax.swing.JSeparator();
+        jSeparator13 = new javax.swing.JSeparator();
+        jSeparator14 = new javax.swing.JSeparator();
+        jSeparator15 = new javax.swing.JSeparator();
         jSeparator1 = new javax.swing.JSeparator();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jInternalFrameTurismo = new javax.swing.JInternalFrame();
-        jTextFieldDivisa1 = new javax.swing.JTextField();
-        jTextFieldDivisa2 = new javax.swing.JTextField();
-        jButtonConvertir = new javax.swing.JButton();
-        jLabelConvertirA = new javax.swing.JLabel();
-        jComboBoxDivisa1 = new javax.swing.JComboBox<>();
-        jLabelConversorDivisas = new javax.swing.JLabel();
-        jComboBoxDivisa2 = new javax.swing.JComboBox<>();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabelClima = new javax.swing.JLabel();
-        jComboBoxCiudades = new javax.swing.JComboBox<>();
-        jLabelGradosC = new javax.swing.JLabel();
-        jLabelInfoCiudad = new javax.swing.JLabel();
-        jLabelHora = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPaneTemperatura = new javax.swing.JTextPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPaneHora = new javax.swing.JTextPane();
         jInternalFrameGeograficos = new javax.swing.JInternalFrame();
         jLabelUbicacion = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
@@ -90,14 +80,18 @@ public class GUI extends javax.swing.JFrame {
         jComboBoxTeatro = new javax.swing.JComboBox<>();
         jLabelObra = new javax.swing.JLabel();
         jLabelMuseo = new javax.swing.JLabel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        jTextPaneTeatro = new javax.swing.JTextPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jListHorarios = new javax.swing.JList<>();
         jScrollPane14 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        jListCines = new javax.swing.JList<>();
         jLabelCines = new javax.swing.JLabel();
         jLabelHorarios = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jListTeatro = new javax.swing.JList<>();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        jListCostoTeatro = new javax.swing.JList<>();
+        jLabelCualTeatro = new javax.swing.JLabel();
+        jLabelCostoTeatro = new javax.swing.JLabel();
         jInternalFrameOtros = new javax.swing.JInternalFrame();
         jTextFieldMontoPropina = new javax.swing.JTextField();
         jTextFieldMontoDescuento = new javax.swing.JTextField();
@@ -132,145 +126,27 @@ public class GUI extends javax.swing.JFrame {
         jButtonTotalPropina = new javax.swing.JButton();
         jButtonTotalDescuento = new javax.swing.JButton();
         jButtonTotalInteres = new javax.swing.JButton();
+        jInternalFrameTurismo = new javax.swing.JInternalFrame();
+        jTextFieldDivisa1 = new javax.swing.JTextField();
+        jTextFieldDivisa2 = new javax.swing.JTextField();
+        jButtonConvertir = new javax.swing.JButton();
+        jLabelConvertirA = new javax.swing.JLabel();
+        jComboBoxDivisa1 = new javax.swing.JComboBox<>();
+        jLabelConversorDivisas = new javax.swing.JLabel();
+        jComboBoxDivisa2 = new javax.swing.JComboBox<>();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabelClima = new javax.swing.JLabel();
+        jComboBoxCiudades = new javax.swing.JComboBox<>();
+        jLabelGradosC = new javax.swing.JLabel();
+        jLabelInfoCiudad = new javax.swing.JLabel();
+        jLabelHora = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPaneTemperatura = new javax.swing.JTextPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextPaneHora = new javax.swing.JTextPane();
         jLabelServicios = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jInternalFrameTurismo.setVisible(true);
-
-        jTextFieldDivisa1.setText("Cantidad");
-        jTextFieldDivisa1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextFieldDivisa1MouseClicked(evt);
-            }
-        });
-
-        jTextFieldDivisa2.setText("Cantidad");
-
-        jButtonConvertir.setText("Convertir");
-        jButtonConvertir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConvertirActionPerformed(evt);
-            }
-        });
-
-        jLabelConvertirA.setText("a");
-
-        jComboBoxDivisa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "EUR", "GBP" }));
-        jComboBoxDivisa1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jLabelConversorDivisas.setFont(new java.awt.Font("MS UI Gothic", 1, 14)); // NOI18N
-        jLabelConversorDivisas.setText("Conversor de Divisas");
-
-        jComboBoxDivisa2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "EUR", "GBP" }));
-
-        jLabelClima.setFont(new java.awt.Font("MS UI Gothic", 0, 14)); // NOI18N
-        jLabelClima.setText("Clima");
-
-        jComboBoxCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paris", "Cuidad de México", "Tokio", "Nueva York", "Viena", "Los Angeles", "Londres", "Hong Kong", "Seoul", "Singapur" }));
-        jComboBoxCiudades.setToolTipText("");
-        jComboBoxCiudades.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxCiudadesActionPerformed(evt);
-            }
-        });
-
-        jLabelGradosC.setFont(new java.awt.Font("MS UI Gothic", 0, 12)); // NOI18N
-        jLabelGradosC.setText("ºC");
-
-        jLabelInfoCiudad.setFont(new java.awt.Font("MS UI Gothic", 1, 14)); // NOI18N
-        jLabelInfoCiudad.setText("Información de Ciudades");
-
-        jLabelHora.setFont(new java.awt.Font("MS UI Gothic", 0, 14)); // NOI18N
-        jLabelHora.setText("Hora");
-
-        jTextPaneTemperatura.setText("Temperatura");
-        jScrollPane2.setViewportView(jTextPaneTemperatura);
-
-        jTextPaneHora.setText("Hora");
-        jScrollPane3.setViewportView(jTextPaneHora);
-
-        javax.swing.GroupLayout jInternalFrameTurismoLayout = new javax.swing.GroupLayout(jInternalFrameTurismo.getContentPane());
-        jInternalFrameTurismo.getContentPane().setLayout(jInternalFrameTurismoLayout);
-        jInternalFrameTurismoLayout.setHorizontalGroup(
-            jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameTurismoLayout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
-                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameTurismoLayout.createSequentialGroup()
-                        .addComponent(jTextFieldDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addComponent(jComboBoxDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelConvertirA, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBoxDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
-                        .addComponent(jTextFieldDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jButtonConvertir)
-                        .addGap(77, 77, 77))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameTurismoLayout.createSequentialGroup()
-                        .addComponent(jLabelConversorDivisas)
-                        .addGap(236, 236, 236))))
-            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelClima)
-                    .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabelHora)
-                            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                                .addComponent(jLabelInfoCiudad)
-                                .addGap(42, 42, 42))))
-                    .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(jComboBoxCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelGradosC)
-                        .addGap(143, 143, 143)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator2)
-                .addContainerGap())
-        );
-        jInternalFrameTurismoLayout.setVerticalGroup(
-            jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
-                .addComponent(jLabelConversorDivisas)
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonConvertir)
-                    .addComponent(jLabelConvertirA)
-                    .addComponent(jComboBoxDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelInfoCiudad)
-                .addGap(25, 25, 25)
-                .addComponent(jComboBoxCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelHora, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelClima))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelGradosC))
-                .addGap(76, 76, 76))
-        );
-
-        jTabbedPane1.addTab("Turismo", jInternalFrameTurismo);
 
         jInternalFrameGeograficos.setVisible(true);
 
@@ -309,6 +185,11 @@ public class GUI extends javax.swing.JFrame {
         jScrollPane6.setViewportView(jTextPaneCubiculo);
 
         jButtonUbicar.setText("Ubicar");
+        jButtonUbicar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUbicarActionPerformed(evt);
+            }
+        });
 
         jButtonDatos.setText("Obtener");
         jButtonDatos.addActionListener(new java.awt.event.ActionListener() {
@@ -374,7 +255,7 @@ public class GUI extends javax.swing.JFrame {
                                                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jButtonDatos)))))
-                        .addGap(0, 93, Short.MAX_VALUE)))
+                        .addGap(0, 198, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jInternalFrameGeograficosLayout.setVerticalGroup(
@@ -414,7 +295,7 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabelCubiculo))
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Geográficos", jInternalFrameGeograficos);
@@ -440,12 +321,22 @@ public class GUI extends javax.swing.JFrame {
         jLabelTeatro.setFont(new java.awt.Font("MS UI Gothic", 1, 14)); // NOI18N
         jLabelTeatro.setText("Teatro");
 
-        jComboBoxMuseos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hidalgo", "Blanquita" }));
+        jComboBoxMuseos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Museo Nacional de Antropología", "Museo Casa Estudio Diego Rivera y Frida Kahlo", "Museo Templo Mayor", "Museo Nacional de Arte", "Museo de Arte Moderno", "Museo de la Luz", "Museo Frida Kahlo", "Museo Interactivo de Economía" }));
+        jComboBoxMuseos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxMuseosActionPerformed(evt);
+            }
+        });
 
         jTextPaneMuseos.setText("Horario del museo");
         jScrollHorarioMuseo.setViewportView(jTextPaneMuseos);
 
-        jComboBoxTeatro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celestina", "El alma buena de Szechwan", "Tartufo" }));
+        jComboBoxTeatro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tartufo", "Electra", "El Rey Edipo", "Hamlet", "Otelo", "Cats", "Wicked" }));
+        jComboBoxTeatro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTeatroActionPerformed(evt);
+            }
+        });
 
         jLabelObra.setFont(new java.awt.Font("MS UI Gothic", 0, 12)); // NOI18N
         jLabelObra.setText("Obra:");
@@ -453,35 +344,72 @@ public class GUI extends javax.swing.JFrame {
         jLabelMuseo.setFont(new java.awt.Font("MS UI Gothic", 0, 12)); // NOI18N
         jLabelMuseo.setText("Museo:");
 
-        jTextPaneTeatro.setText("Costo de la obra");
-        jScrollPane9.setViewportView(jTextPaneTeatro);
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        jListHorarios.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Horario 1", "Horario2", "Horario 3" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(jListHorarios);
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        jListCines.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Cine2", "Cine2", "Cine3" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane14.setViewportView(jList2);
+        jScrollPane14.setViewportView(jListCines);
 
         jLabelCines.setText("Cines");
 
         jLabelHorarios.setText("Horarios");
 
+        jListTeatro.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane8.setViewportView(jListTeatro);
+
+        jListCostoTeatro.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane15.setViewportView(jListCostoTeatro);
+
+        jLabelCualTeatro.setText("Teatro");
+
+        jLabelCostoTeatro.setText("Costo");
+
         javax.swing.GroupLayout jInternalFrameEyCLayout = new javax.swing.GroupLayout(jInternalFrameEyC.getContentPane());
         jInternalFrameEyC.getContentPane().setLayout(jInternalFrameEyCLayout);
         jInternalFrameEyCLayout.setHorizontalGroup(
             jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(jScrollHorarioMuseo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
+                .addContainerGap(182, Short.MAX_VALUE)
+                .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
+                        .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                                .addGap(111, 111, 111)
+                                .addComponent(jLabelPeliculas))
+                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                                .addComponent(jLabelPelicula)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBoxPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(219, 219, 219))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
+                        .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(54, 54, 54)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addComponent(jLabelCines)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelHorarios)
+                                .addGap(59, 59, 59)))
+                        .addGap(167, 167, 167))))
             .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
                 .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
@@ -489,50 +417,49 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(jSeparator5))
                     .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addComponent(jLabelObra)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBoxTeatro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 208, Short.MAX_VALUE)))
+                        .addGap(332, 332, 332)
+                        .addComponent(jLabelMuseos)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                        .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                                .addGap(152, 152, 152)
+                                .addComponent(jLabelMuseo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBoxMuseos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                                .addGap(306, 306, 306)
+                                .addComponent(jScrollHorarioMuseo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(jLabelMuseo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBoxMuseos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(130, 130, 130))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(134, 134, 134))
-            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                        .addGap(252, 252, 252)
-                        .addComponent(jLabelPeliculas))
-                    .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(jLabelMuseos))
-                    .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addComponent(jLabelTeatro))
-                    .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                        .addGap(255, 255, 255)
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(jLabelPelicula)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBoxPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(jLabelCines)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelHorarios)
-                .addGap(193, 193, 193))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
+                        .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                                .addComponent(jLabelObra)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBoxTeatro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addComponent(jLabelTeatro)))
+                        .addGap(275, 275, 275))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
+                        .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
+                                .addGap(222, 222, 222)
+                                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                                .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                                        .addGap(45, 45, 45)
+                                        .addComponent(jLabelCualTeatro)
+                                        .addGap(190, 190, 190)
+                                        .addComponent(jLabelCostoTeatro)))
+                                .addGap(75, 75, 75)))
+                        .addGap(153, 153, 153))))
         );
         jInternalFrameEyCLayout.setVerticalGroup(
             jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -543,7 +470,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelPelicula))
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelCines)
                     .addComponent(jLabelHorarios))
@@ -551,7 +478,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                .addGap(36, 36, 36)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(jLabelMuseos)
@@ -569,9 +496,15 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxTeatro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelObra))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCualTeatro)
+                    .addComponent(jLabelCostoTeatro))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
         );
 
         jTabbedPane1.addTab("Entretenimiento y Cultura", jInternalFrameEyC);
@@ -654,13 +587,13 @@ public class GUI extends javax.swing.JFrame {
         jInternalFrameOtrosLayout.setHorizontalGroup(
             jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator7)
-                    .addComponent(jSeparator8)
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addContainerGap()
+                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator7)
+                            .addComponent(jSeparator8)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                                 .addGap(114, 114, 114)
                                 .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -670,20 +603,15 @@ public class GUI extends javax.swing.JFrame {
                                             .addComponent(jLabel1)
                                             .addComponent(jTextFieldMontoPropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(90, 90, 90)
-                                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jComboBoxPorcentajePropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(78, 78, 78)
+                                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel2)
-                                                    .addComponent(jComboBoxPorcentajePropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(78, 78, 78)
-                                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                                        .addGap(10, 10, 10)
-                                                        .addComponent(jScrollPane7))
-                                                    .addComponent(jLabel3)))
-                                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                                .addGap(4, 4, 4)
-                                                .addComponent(jLabelDescuentos))))
+                                                .addGap(10, 10, 10)
+                                                .addComponent(jScrollPane7))
+                                            .addComponent(jLabel3)))
                                     .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                                         .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jTextFieldMontoDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -694,17 +622,25 @@ public class GUI extends javax.swing.JFrame {
                                                 .addComponent(jLabel5))
                                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                                                 .addGap(97, 97, 97)
-                                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabelIntereses)
-                                                    .addComponent(jTextFieldPorcentajedescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(jTextFieldPorcentajedescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(59, 59, 59)
                                         .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel6)
                                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                                                 .addGap(10, 10, 10)
-                                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                        .addGap(14, 14, 14)
+                                        .addComponent(jButtonTotalPropina))
+                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(jButtonTotalDescuento)))
+                                .addGap(0, 112, Short.MAX_VALUE))))
+                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addGap(93, 93, 93)
+                                .addGap(100, 100, 100)
                                 .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
                                     .addComponent(jTextFieldMontoInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -725,54 +661,54 @@ public class GUI extends javax.swing.JFrame {
                                     .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                                         .addGap(20, 20, 20)
                                         .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel10))))
-                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(jButtonTotalPropina))
-                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                    .addComponent(jLabel10))
                                 .addGap(22, 22, 22)
                                 .addComponent(jButtonTotalInteres))
                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(jButtonTotalDescuento)))
-                        .addGap(0, 65, Short.MAX_VALUE)))
+                                .addGap(340, 340, 340)
+                                .addComponent(jLabelIntereses))
+                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                .addGap(335, 335, 335)
+                                .addComponent(jLabelDescuentos))
+                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                .addGap(345, 345, 345)
+                                .addComponent(jLabelPropinas)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                .addGap(258, 258, 258)
-                .addComponent(jLabelPropinas)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jInternalFrameOtrosLayout.setVerticalGroup(
             jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonTotalInteres)
+                .addComponent(jLabelPropinas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                        .addComponent(jLabelPropinas)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
-                                .addGap(3, 3, 3)
-                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextFieldMontoPropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBoxPorcentajePropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButtonTotalPropina))
-                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabelDescuentos)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(3, 3, 3)
+                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldMontoPropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxPorcentajePropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButtonTotalPropina))
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(46, 46, 46)
+                .addComponent(jLabelDescuentos)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameOtrosLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(jButtonTotalDescuento)
+                        .addGap(63, 63, 63))
+                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                         .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -783,42 +719,174 @@ public class GUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
-                                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextFieldPorcentajedescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextFieldMontoDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jLabelIntereses)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameOtrosLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButtonTotalDescuento)
-                                        .addGap(63, 63, 63)))
-                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(26, 26, 26)
                                 .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldMontoInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                                    .addComponent(jTextFieldPorcentajedescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldMontoDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelIntereses)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonTotalInteres)
+                    .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                            .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel9)
+                                .addComponent(jLabel10))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jTextFieldMontoInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                            .addComponent(jLabel8)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jTextFieldInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(72, 72, 72))
         );
 
         jTabbedPane1.addTab("Otros", jInternalFrameOtros);
+
+        jInternalFrameTurismo.setVisible(true);
+
+        jTextFieldDivisa1.setText("Cantidad");
+        jTextFieldDivisa1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextFieldDivisa1MouseClicked(evt);
+            }
+        });
+
+        jTextFieldDivisa2.setText("Cantidad");
+
+        jButtonConvertir.setText("Convertir");
+        jButtonConvertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConvertirActionPerformed(evt);
+            }
+        });
+
+        jLabelConvertirA.setText("a");
+
+        jComboBoxDivisa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "EUR", "GBP" }));
+        jComboBoxDivisa1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jLabelConversorDivisas.setFont(new java.awt.Font("MS UI Gothic", 1, 14)); // NOI18N
+        jLabelConversorDivisas.setText("Conversor de Divisas");
+
+        jComboBoxDivisa2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "EUR", "GBP" }));
+
+        jLabelClima.setFont(new java.awt.Font("MS UI Gothic", 0, 14)); // NOI18N
+        jLabelClima.setText("Clima");
+
+        jComboBoxCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paris", "Cuidad de México", "Tokio", "Nueva York", "Viena", "Los Angeles", "Londres", "Hong Kong", "Seoul", "Singapur" }));
+        jComboBoxCiudades.setToolTipText("");
+        jComboBoxCiudades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxCiudadesActionPerformed(evt);
+            }
+        });
+
+        jLabelGradosC.setFont(new java.awt.Font("MS UI Gothic", 0, 12)); // NOI18N
+        jLabelGradosC.setText("ºC");
+
+        jLabelInfoCiudad.setFont(new java.awt.Font("MS UI Gothic", 1, 14)); // NOI18N
+        jLabelInfoCiudad.setText("Información de Ciudades");
+
+        jLabelHora.setFont(new java.awt.Font("MS UI Gothic", 0, 14)); // NOI18N
+        jLabelHora.setText("Hora");
+
+        jTextPaneTemperatura.setText("Temperatura");
+        jScrollPane2.setViewportView(jTextPaneTemperatura);
+
+        jTextPaneHora.setText("Hora");
+        jScrollPane3.setViewportView(jTextPaneHora);
+
+        javax.swing.GroupLayout jInternalFrameTurismoLayout = new javax.swing.GroupLayout(jInternalFrameTurismo.getContentPane());
+        jInternalFrameTurismo.getContentPane().setLayout(jInternalFrameTurismoLayout);
+        jInternalFrameTurismoLayout.setHorizontalGroup(
+            jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator2)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameTurismoLayout.createSequentialGroup()
+                .addContainerGap(100, Short.MAX_VALUE)
+                .addComponent(jTextFieldDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(jComboBoxDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelConvertirA, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBoxDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(jTextFieldDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jButtonConvertir)
+                .addGap(81, 81, 81))
+            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                        .addGap(281, 281, 281)
+                        .addComponent(jLabelConversorDivisas))
+                    .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                        .addGap(201, 201, 201)
+                        .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addComponent(jLabelInfoCiudad))
+                            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                                .addGap(95, 95, 95)
+                                .addComponent(jComboBoxCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelGradosC)
+                                .addGap(143, 143, 143)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameTurismoLayout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(jLabelClima)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelHora)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jInternalFrameTurismoLayout.setVerticalGroup(
+            jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                .addContainerGap(67, Short.MAX_VALUE)
+                .addComponent(jLabelConversorDivisas)
+                .addGap(45, 45, 45)
+                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonConvertir)
+                    .addComponent(jLabelConvertirA)
+                    .addComponent(jComboBoxDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(75, 75, 75)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelInfoCiudad)
+                .addGap(25, 25, 25)
+                .addComponent(jComboBoxCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelHora, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelClima))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelGradosC))
+                .addGap(76, 76, 76))
+        );
+
+        jTabbedPane1.addTab("Turismo", jInternalFrameTurismo);
 
         jLabelServicios.setFont(new java.awt.Font("MS UI Gothic", 1, 18)); // NOI18N
         jLabelServicios.setText("Servicios");
@@ -829,20 +897,21 @@ public class GUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jTabbedPane1)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(252, 252, 252)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelServicios)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(338, 338, 338))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(jLabelServicios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
@@ -856,8 +925,10 @@ public class GUI extends javax.swing.JFrame {
         try {
             ITurismo turismo;
             turismo = (ITurismo)Naming.lookup("rmi://localhost:1099/Turismo");
-            jTextPaneTemperatura.setText(String.valueOf(turismo.getClima(1)));
-//            jTextPaneHora.setText(Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+            jTextPaneTemperatura.setText(String.valueOf(turismo.getClima(ciudad+1)));
+            TimeZone tz = turismo.getHoraExacta(ciudad+1);
+            Calendar c = Calendar.getInstance(tz);
+            jTextPaneHora.setText(String.valueOf(c.get(Calendar.HOUR_OF_DAY)));
         } catch (Exception e) {
             e.printStackTrace();
         } 
@@ -964,28 +1035,79 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldDivisa1MouseClicked
 
     private void jComboBoxPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPeliculasActionPerformed
-//        int pelicula = jComboBoxPeliculas.getSelectedIndex();
-//        
-//        IEntretenimiento entretenimiento;
-//        entretenimiento = (IEntretenimiento)Naming.lookup("rmi://localhost:1099/Entretenimiento");
-//        try {
-//            ArrayList<Funcion> cines = entretenimiento.cinesYHorarios(pelicula);
-//            String[] array = new String[ueas.size()];
-//            jListMaterias.setListData(ueas.toArray(array));
-//
-//            ArrayList<String> horarios = geografico.materiasImpartidas(profesor);
-//            if(ueas.isEmpty()){
-//                mensaje.addElement("No ha impartido uea");
-//                jListMaterias.setListData(mensaje);
-//            }else{
-//                String[] array = new String[ueas.size()];
-//                jListMaterias.setListData(ueas.toArray(array));
-//            }
-//               } catch (Exception e) {
-//                   e.printStackTrace();
-//                   jTextPaneInteres.setText("Error");
-//               }
+        int pelicula = jComboBoxPeliculas.getSelectedIndex();
+        
+        try {
+            IEntretenimiento entretenimiento;
+            entretenimiento = (IEntretenimiento)Naming.lookup("rmi://localhost:1099/Entretenimiento");
+            ArrayList<Funcion> cines = entretenimiento.cinesYHorarios(pelicula+1);
+            String[] funciones = new String[cines.size()];
+            String[] horarios = new String[cines.size()];
+            int i;
+            for(i = 0; i < cines.size() ; i ++)
+            {
+                funciones[i] = cines.get(i).getRecinto();
+                horarios[i] = cines.get(i).getHoraInicio();
+            }
+            jListCines.setListData(funciones);
+            jListHorarios.setListData(horarios);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
     }//GEN-LAST:event_jComboBoxPeliculasActionPerformed
+
+    private void jButtonUbicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUbicarActionPerformed
+        String ubicacion = jTextFieldUbicacion.getText();
+                IGeografico geografico;
+                try {
+                    geografico = (IGeografico)Naming.lookup("rmi://localhost:1099/Geografico");
+                    String res = geografico.ubicacionDe(ubicacion);
+                    if(res == null){
+                        res = "No se ha encontrado la ubicación";
+                    }
+                    jTextPane1.setText(res);                    
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }// TODO add your handling code here:
+    }//GEN-LAST:event_jButtonUbicarActionPerformed
+
+    private void jComboBoxMuseosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMuseosActionPerformed
+        int museo = jComboBoxMuseos.getSelectedIndex();
+        
+        try {
+            IEntretenimiento entretenimiento;
+            entretenimiento = (IEntretenimiento)Naming.lookup("rmi://localhost:1099/Entretenimiento");
+            String mus = entretenimiento.horarioMuseo(museo+1);
+            jTextPaneMuseos.setText(mus);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }// TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxMuseosActionPerformed
+
+    private void jComboBoxTeatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTeatroActionPerformed
+        int obra = jComboBoxTeatro.getSelectedIndex();
+        
+        try {
+            IEntretenimiento entretenimiento;
+            entretenimiento = (IEntretenimiento)Naming.lookup("rmi://localhost:1099/Entretenimiento");
+            ArrayList<Funcion> teatros = entretenimiento.costoPorFuncion(obra+1);
+            String[] recintos = new String[teatros.size()];
+            String[] costos = new String[teatros.size()];
+            int i;
+            for(i = 0; i < teatros.size() ; i ++)
+            {
+                recintos[i] = teatros.get(i).getRecinto();
+                costos[i] = teatros.get(i).getCosto();
+            }
+            jListTeatro.setListData(recintos);
+            jListCostoTeatro.setListData(costos);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }//GEN-LAST:event_jComboBoxTeatroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1055,6 +1177,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelConversorDivisas;
     private javax.swing.JLabel jLabelConvertirA;
     private javax.swing.JLabel jLabelCorreo;
+    private javax.swing.JLabel jLabelCostoTeatro;
+    private javax.swing.JLabel jLabelCualTeatro;
     private javax.swing.JLabel jLabelCubiculo;
     private javax.swing.JLabel jLabelDatosProfesor;
     private javax.swing.JLabel jLabelDescuentos;
@@ -1074,9 +1198,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTeatro;
     private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JLabel jLabelUbicacion;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jListCines;
+    private javax.swing.JList<String> jListCostoTeatro;
+    private javax.swing.JList<String> jListHorarios;
     private javax.swing.JList<String> jListMaterias;
+    private javax.swing.JList<String> jListTeatro;
     private javax.swing.JScrollPane jScrollHorarioMuseo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
@@ -1084,15 +1210,22 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPaneUbicacion;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -1100,6 +1233,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextFieldDivisa1;
     private javax.swing.JTextField jTextFieldDivisa2;
@@ -1119,7 +1253,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPaneMontoInteres;
     private javax.swing.JTextPane jTextPaneMuseos;
     private javax.swing.JTextPane jTextPanePropina;
-    private javax.swing.JTextPane jTextPaneTeatro;
     private javax.swing.JTextPane jTextPaneTelefono;
     private javax.swing.JTextPane jTextPaneTemperatura;
     // End of variables declaration//GEN-END:variables
