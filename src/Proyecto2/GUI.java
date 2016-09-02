@@ -2,6 +2,7 @@ package Proyecto2;
 
 import java.rmi.Naming;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Vector;
 
 /*
@@ -83,8 +84,6 @@ public class GUI extends javax.swing.JFrame {
         jLabelTeatro = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jTableCineHorario = new javax.swing.JTable();
         jComboBoxMuseos = new javax.swing.JComboBox<>();
         jScrollHorarioMuseo = new javax.swing.JScrollPane();
         jTextPaneMuseos = new javax.swing.JTextPane();
@@ -93,6 +92,12 @@ public class GUI extends javax.swing.JFrame {
         jLabelMuseo = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTextPaneTeatro = new javax.swing.JTextPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        jLabelCines = new javax.swing.JLabel();
+        jLabelHorarios = new javax.swing.JLabel();
         jInternalFrameOtros = new javax.swing.JInternalFrame();
         jTextFieldMontoPropina = new javax.swing.JTextField();
         jTextFieldMontoDescuento = new javax.swing.JTextField();
@@ -134,6 +139,11 @@ public class GUI extends javax.swing.JFrame {
         jInternalFrameTurismo.setVisible(true);
 
         jTextFieldDivisa1.setText("Cantidad");
+        jTextFieldDivisa1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextFieldDivisa1MouseClicked(evt);
+            }
+        });
 
         jTextFieldDivisa2.setText("Cantidad");
 
@@ -147,11 +157,7 @@ public class GUI extends javax.swing.JFrame {
         jLabelConvertirA.setText("a");
 
         jComboBoxDivisa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD", "MXN", "EUR", "GBP" }));
-        jComboBoxDivisa1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxDivisa1ActionPerformed(evt);
-            }
-        });
+        jComboBoxDivisa1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabelConversorDivisas.setFont(new java.awt.Font("MS UI Gothic", 1, 14)); // NOI18N
         jLabelConversorDivisas.setText("Conversor de Divisas");
@@ -161,6 +167,8 @@ public class GUI extends javax.swing.JFrame {
         jLabelClima.setFont(new java.awt.Font("MS UI Gothic", 0, 14)); // NOI18N
         jLabelClima.setText("Clima");
 
+        jComboBoxCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paris", "Cuidad de México", "Tokio", "Nueva York", "Viena", "Los Angeles", "Londres", "Hong Kong", "Seoul", "Singapur" }));
+        jComboBoxCiudades.setToolTipText("");
         jComboBoxCiudades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxCiudadesActionPerformed(evt);
@@ -186,59 +194,57 @@ public class GUI extends javax.swing.JFrame {
         jInternalFrameTurismo.getContentPane().setLayout(jInternalFrameTurismoLayout);
         jInternalFrameTurismoLayout.setHorizontalGroup(
             jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextFieldDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(jComboBoxDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelConvertirA, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBoxDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addComponent(jTextFieldDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jButtonConvertir)
-                .addGap(23, 23, 23))
-            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator2)
-                .addContainerGap())
-            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                .addGap(116, 116, 116)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameTurismoLayout.createSequentialGroup()
+                .addContainerGap(104, Short.MAX_VALUE)
                 .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                        .addComponent(jLabelClima)
-                        .addContainerGap(473, Short.MAX_VALUE))
-                    .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelGradosC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(161, 161, 161))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameTurismoLayout.createSequentialGroup()
+                        .addComponent(jTextFieldDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(jComboBoxDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelConvertirA, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBoxDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(jTextFieldDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jButtonConvertir)
+                        .addGap(77, 77, 77))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameTurismoLayout.createSequentialGroup()
+                        .addComponent(jLabelConversorDivisas)
+                        .addGap(236, 236, 236))))
             .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                .addGap(115, 115, 115)
                 .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelClima)
                     .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                        .addGap(191, 191, 191)
+                        .addGap(75, 75, 75)
                         .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelHora)
                             .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
                                 .addComponent(jLabelInfoCiudad)
                                 .addGap(42, 42, 42))))
                     .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                        .addGap(211, 211, 211)
-                        .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelConversorDivisas))))
+                        .addGap(95, 95, 95)
+                        .addComponent(jComboBoxCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelGradosC)
+                        .addGap(143, 143, 143)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator2)
+                .addContainerGap())
         );
         jInternalFrameTurismoLayout.setVerticalGroup(
             jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrameTurismoLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addComponent(jLabelConversorDivisas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jInternalFrameTurismoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,9 +252,9 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabelConvertirA)
                     .addComponent(jComboBoxDivisa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxDivisa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelInfoCiudad)
                 .addGap(25, 25, 25)
                 .addComponent(jComboBoxCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -261,7 +267,7 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelGradosC))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addGap(76, 76, 76))
         );
 
         jTabbedPane1.addTab("Turismo", jInternalFrameTurismo);
@@ -394,7 +400,6 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jButtonDatos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jInternalFrameGeograficosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jInternalFrameGeograficosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jInternalFrameGeograficosLayout.createSequentialGroup()
                             .addGroup(jInternalFrameGeograficosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -407,13 +412,21 @@ public class GUI extends javax.swing.JFrame {
                                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabelCubiculo)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addComponent(jLabelCubiculo))
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Geográficos", jInternalFrameGeograficos);
 
         jInternalFrameEyC.setVisible(true);
+
+        jComboBoxPeliculas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ben-Hur", "El club de las madres rebeldes", "El engaño del siglo", "El poder de la moda", "No estamos solos", "Un secreto entre nosotros" }));
+        jComboBoxPeliculas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxPeliculasActionPerformed(evt);
+            }
+        });
 
         jLabelPelicula.setFont(new java.awt.Font("MS UI Gothic", 0, 12)); // NOI18N
         jLabelPelicula.setText("Película:");
@@ -427,35 +440,12 @@ public class GUI extends javax.swing.JFrame {
         jLabelTeatro.setFont(new java.awt.Font("MS UI Gothic", 1, 14)); // NOI18N
         jLabelTeatro.setText("Teatro");
 
-        jTableCineHorario.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Cine", "Horarios"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane8.setViewportView(jTableCineHorario);
+        jComboBoxMuseos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hidalgo", "Blanquita" }));
 
         jTextPaneMuseos.setText("Horario del museo");
         jScrollHorarioMuseo.setViewportView(jTextPaneMuseos);
+
+        jComboBoxTeatro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celestina", "El alma buena de Szechwan", "Tartufo" }));
 
         jLabelObra.setFont(new java.awt.Font("MS UI Gothic", 0, 12)); // NOI18N
         jLabelObra.setText("Obra:");
@@ -465,6 +455,24 @@ public class GUI extends javax.swing.JFrame {
 
         jTextPaneTeatro.setText("Costo de la obra");
         jScrollPane9.setViewportView(jTextPaneTeatro);
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Horario 1", "Horario2", "Horario 3" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Cine2", "Cine2", "Cine3" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane14.setViewportView(jList2);
+
+        jLabelCines.setText("Cines");
+
+        jLabelHorarios.setText("Horarios");
 
         javax.swing.GroupLayout jInternalFrameEyCLayout = new javax.swing.GroupLayout(jInternalFrameEyC.getContentPane());
         jInternalFrameEyC.getContentPane().setLayout(jInternalFrameEyCLayout);
@@ -481,18 +489,11 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(jSeparator5))
                     .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                        .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                                .addGap(141, 141, 141)
-                                .addComponent(jLabelPelicula)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBoxPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                                .addGap(209, 209, 209)
-                                .addComponent(jLabelObra)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBoxTeatro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(209, 209, 209)
+                        .addComponent(jLabelObra)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBoxTeatro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 208, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
                 .addGap(112, 112, 112)
@@ -500,11 +501,14 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jComboBoxMuseos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(130, 130, 130))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEyCLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(134, 134, 134))
             .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
                 .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
                         .addGap(252, 252, 252)
                         .addComponent(jLabelPeliculas))
@@ -516,8 +520,19 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(jLabelTeatro))
                     .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
                         .addGap(255, 255, 255)
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(107, Short.MAX_VALUE))
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jLabelPelicula)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBoxPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jInternalFrameEyCLayout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jLabelCines)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelHorarios)
+                .addGap(193, 193, 193))
         );
         jInternalFrameEyCLayout.setVerticalGroup(
             jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -528,9 +543,15 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelPelicula))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(15, 15, 15)
+                .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCines)
+                    .addComponent(jLabelHorarios))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrameEyCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(jLabelMuseos)
@@ -550,7 +571,7 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jLabelObra))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Entretenimiento y Cultura", jInternalFrameEyC);
@@ -601,17 +622,32 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel7.setText("Adeudo");
 
-        jLabel8.setText("Porcentaje de interes");
+        jLabel8.setText("Pago");
 
-        jLabel9.setText("Adeudo de intereses");
+        jLabel9.setText("Porcentaje de interés");
 
-        jLabel10.setText("Total a pagar");
+        jLabel10.setText("Interés a pagar");
 
         jButtonTotalPropina.setText("Total");
+        jButtonTotalPropina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTotalPropinaActionPerformed(evt);
+            }
+        });
 
         jButtonTotalDescuento.setText("Total");
+        jButtonTotalDescuento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTotalDescuentoActionPerformed(evt);
+            }
+        });
 
         jButtonTotalInteres.setText("Total");
+        jButtonTotalInteres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTotalInteresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jInternalFrameOtrosLayout = new javax.swing.GroupLayout(jInternalFrameOtros.getContentPane());
         jInternalFrameOtros.getContentPane().setLayout(jInternalFrameOtrosLayout);
@@ -620,67 +656,65 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator7)
+                    .addComponent(jSeparator8)
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator3))
-                        .addContainerGap())
-                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jTextFieldMontoInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
                         .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jTextFieldMontoPropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(90, 90, 90)
+                                .addGap(114, 114, 114)
                                 .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
                                         .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jComboBoxPorcentajePropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(78, 78, 78)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jTextFieldMontoPropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(90, 90, 90)
                                         .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel3)
+                                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel2)
+                                                    .addComponent(jComboBoxPorcentajePropina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(78, 78, 78)
+                                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                                        .addGap(10, 10, 10)
+                                                        .addComponent(jScrollPane7))
+                                                    .addComponent(jLabel3)))
+                                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                                .addGap(4, 4, 4)
+                                                .addComponent(jLabelDescuentos))))
+                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextFieldMontoDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel4))
+                                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                                .addGap(71, 71, 71)
+                                                .addComponent(jLabel5))
+                                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                                .addGap(97, 97, 97)
+                                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabelIntereses)
+                                                    .addComponent(jTextFieldPorcentajedescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGap(59, 59, 59)
+                                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6)
                                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                                                 .addGap(10, 10, 10)
-                                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(jLabelDescuentos))))
+                                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                .addGap(93, 93, 93)
                                 .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldMontoDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4))
+                                    .addComponent(jLabel7)
+                                    .addComponent(jTextFieldMontoInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(40, 40, 40)
                                 .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                        .addGap(71, 71, 71)
-                                        .addComponent(jLabel5))
-                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                        .addGap(97, 97, 97)
-                                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelIntereses)
-                                            .addComponent(jTextFieldPorcentajedescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(59, 59, 59)
-                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(jLabel8))
-                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                        .addGap(51, 51, 51)
-                                        .addComponent(jTextFieldInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(41, 41, 41)
+                                    .addComponent(jTextFieldInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameOtrosLayout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(8, 8, 8)))
+                                .addGap(36, 36, 36)
                                 .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
                                     .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
@@ -693,19 +727,17 @@ public class GUI extends javax.swing.JFrame {
                                         .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel10))))
                         .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                                .addComponent(jButtonTotalDescuento)
-                                .addGap(49, 49, 49))
                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addComponent(jButtonTotalPropina))
-                                    .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addComponent(jButtonTotalInteres)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                .addGap(14, 14, 14)
+                                .addComponent(jButtonTotalPropina))
+                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jButtonTotalInteres))
+                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jButtonTotalDescuento)))
+                        .addGap(0, 65, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
                 .addGap(258, 258, 258)
                 .addComponent(jLabelPropinas)
@@ -741,40 +773,48 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(jLabelDescuentos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
-                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
                                         .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jTextFieldPorcentajedescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jTextFieldMontoDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(40, 40, 40)
                                         .addComponent(jLabelIntereses)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrameOtrosLayout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameOtrosLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jButtonTotalDescuento)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
+                                        .addGap(63, 63, 63)))
+                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextFieldMontoInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextFieldInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jInternalFrameOtrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldMontoInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jInternalFrameOtrosLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -809,8 +849,18 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBoxCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCiudadesActionPerformed
-       // System.out.println("HOLA");
-        jTextPaneHora.setText("Hola");
+        //Checar que el combo box si esté seleccionado
+        int ciudad = jComboBoxCiudades.getSelectedIndex();
+        
+        //Turismo	
+        try {
+            ITurismo turismo;
+            turismo = (ITurismo)Naming.lookup("rmi://localhost:1099/Turismo");
+            jTextPaneTemperatura.setText(String.valueOf(turismo.getClima(1)));
+//            jTextPaneHora.setText(Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+        } catch (Exception e) {
+            e.printStackTrace();
+        } 
     }//GEN-LAST:event_jComboBoxCiudadesActionPerformed
 
     private void jButtonConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvertirActionPerformed
@@ -830,10 +880,6 @@ public class GUI extends javax.swing.JFrame {
             e.printStackTrace();
         } 
     }//GEN-LAST:event_jButtonConvertirActionPerformed
-
-    private void jComboBoxDivisa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDivisa1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxDivisa1ActionPerformed
 
     private void jButtonDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDatosActionPerformed
         String profesor = jTextFieldNombreProfesor.getText();
@@ -869,6 +915,77 @@ public class GUI extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jButtonDatosActionPerformed
+
+    private void jButtonTotalPropinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTotalPropinaActionPerformed
+        IOtros otros;
+               try {
+                   otros = (IOtros)Naming.lookup("rmi://localhost:1099/Otros");
+                   float consumo = Float.parseFloat(jTextFieldMontoPropina.getText());
+                   int porcentaje = jComboBoxPorcentajePropina.getSelectedIndex()*5 + 10;
+                   jTextPanePropina.setText(String.valueOf(otros.calcularPropina(consumo, porcentaje)));
+
+               } catch (Exception e) {
+                   e.printStackTrace();
+                   jTextPanePropina.setText("Error");
+               }
+    }//GEN-LAST:event_jButtonTotalPropinaActionPerformed
+
+    private void jButtonTotalDescuentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTotalDescuentoActionPerformed
+        IOtros otros;
+                try {
+                    otros = (IOtros)Naming.lookup("rmi://localhost:1099/Otros");
+                    float precio = Float.parseFloat(jTextFieldMontoDescuento.getText());
+                    int descuento = Integer.parseInt(jTextFieldPorcentajedescuento.getText());
+                    jTextPaneDescuento.setText(String.valueOf(otros.calcularDescuento(precio, descuento)));
+ 
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    jTextPaneDescuento.setText("Error");
+                }
+    }//GEN-LAST:event_jButtonTotalDescuentoActionPerformed
+
+    private void jButtonTotalInteresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTotalInteresActionPerformed
+        IOtros otros;
+               try {
+                   otros = (IOtros)Naming.lookup("rmi://localhost:1099/Otros");
+                   float deuda = Float.parseFloat(jTextFieldMontoInteres.getText());
+                   float pago = Float.parseFloat(jTextFieldInteres.getText());
+                   float interes = Float.parseFloat(jTextPaneMontoInteres.getText());
+                   jTextPaneInteres.setText(String.valueOf(otros.calcularInteres(deuda, pago, interes)));
+
+               } catch (Exception e) {
+                   e.printStackTrace();
+                   jTextPaneInteres.setText("Error");
+               }
+    }//GEN-LAST:event_jButtonTotalInteresActionPerformed
+
+    private void jTextFieldDivisa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldDivisa1MouseClicked
+        jTextFieldDivisa1.setText("");
+    }//GEN-LAST:event_jTextFieldDivisa1MouseClicked
+
+    private void jComboBoxPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPeliculasActionPerformed
+//        int pelicula = jComboBoxPeliculas.getSelectedIndex();
+//        
+//        IEntretenimiento entretenimiento;
+//        entretenimiento = (IEntretenimiento)Naming.lookup("rmi://localhost:1099/Entretenimiento");
+//        try {
+//            ArrayList<Funcion> cines = entretenimiento.cinesYHorarios(pelicula);
+//            String[] array = new String[ueas.size()];
+//            jListMaterias.setListData(ueas.toArray(array));
+//
+//            ArrayList<String> horarios = geografico.materiasImpartidas(profesor);
+//            if(ueas.isEmpty()){
+//                mensaje.addElement("No ha impartido uea");
+//                jListMaterias.setListData(mensaje);
+//            }else{
+//                String[] array = new String[ueas.size()];
+//                jListMaterias.setListData(ueas.toArray(array));
+//            }
+//               } catch (Exception e) {
+//                   e.printStackTrace();
+//                   jTextPaneInteres.setText("Error");
+//               }
+    }//GEN-LAST:event_jComboBoxPeliculasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -933,6 +1050,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelCines;
     private javax.swing.JLabel jLabelClima;
     private javax.swing.JLabel jLabelConversorDivisas;
     private javax.swing.JLabel jLabelConvertirA;
@@ -942,6 +1060,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelDescuentos;
     private javax.swing.JLabel jLabelGradosC;
     private javax.swing.JLabel jLabelHora;
+    private javax.swing.JLabel jLabelHorarios;
     private javax.swing.JLabel jLabelInfoCiudad;
     private javax.swing.JLabel jLabelIntereses;
     private javax.swing.JLabel jLabelMuseo;
@@ -955,19 +1074,22 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTeatro;
     private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JLabel jLabelUbicacion;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jListMaterias;
     private javax.swing.JScrollPane jScrollHorarioMuseo;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JScrollPane jScrollPaneUbicacion;
     private javax.swing.JSeparator jSeparator1;
@@ -979,7 +1101,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTableCineHorario;
     private javax.swing.JTextField jTextFieldDivisa1;
     private javax.swing.JTextField jTextFieldDivisa2;
     private javax.swing.JTextField jTextFieldInteres;
