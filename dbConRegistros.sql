@@ -1,6 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.23, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `practica2sd` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `practica2sd`;
+-- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: practica2sd
+-- Host: localhost    Database: practica2sd
 -- ------------------------------------------------------
 -- Server version	5.5.24-log
 
@@ -27,7 +29,7 @@ CREATE TABLE `cine` (
   `cineNombre` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idcine`),
   UNIQUE KEY `cineNombre_UNIQUE` (`cineNombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +68,7 @@ CREATE TABLE `ciudad` (
 
 LOCK TABLES `ciudad` WRITE;
 /*!40000 ALTER TABLE `ciudad` DISABLE KEYS */;
-INSERT INTO `ciudad` VALUES (1,'Paris','19',3,'Europa/Paris'),(2,'Ciudad de Mexico','17',2,'America/Mexico'),(3,'Tokio','30',1,'Asia/Tokio'),(4,'Nueva York','24',1,'America/EEUU'),(5,'Viena','19',3,'Europa/Viena'),(6,'Los Angeles','18',1,'America/LosAngeles'),(7,'Londres','16',4,'Europa/Londres'),(8,'Hong Kong','28',1,'Asia/HongKong'),(9,'Seoul','27',1,'Asia/Seoul'),(10,'Singapur','32',1,'Asia/Singapur');
+INSERT INTO `ciudad` VALUES (1,'Paris','19',3,'Europe/Paris'),(2,'Ciudad de Mexico','17',2,'America/Mexico_City'),(3,'Tokio','30',1,'Asia/Tokyo'),(4,'Nueva York','24',1,'America/New_York'),(5,'Viena','19',3,'Europa/Vienna'),(6,'Los Angeles','18',1,'America/Los_Angeles'),(7,'Londres','16',4,'Europe/London'),(8,'Hong Kong','28',1,'Asia/Hong_Kong'),(9,'Seoul','27',1,'Asia/Seoul'),(10,'Singapur','32',1,'Asia/Singapore');
 /*!40000 ALTER TABLE `ciudad` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +141,7 @@ CREATE TABLE `espaciofis` (
   `espaciofisUbicacion` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idespaciofis`),
   UNIQUE KEY `espaciofisNombre_UNIQUE` (`espaciofisNombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +150,7 @@ CREATE TABLE `espaciofis` (
 
 LOCK TABLES `espaciofis` WRITE;
 /*!40000 ALTER TABLE `espaciofis` DISABLE KEYS */;
-INSERT INTO `espaciofis` VALUES (1,'Biblioteca','Edificio \"I\". En la plaza COSEI.');
+INSERT INTO `espaciofis` VALUES (1,'Biblioteca','Edificio \"I\". En la plaza COSEI.'),(2,'H-202','Edificio \"H\". 2er. Piso'),(3,'2P','Edificio \"P\". 1er. Piso'),(4,'Coordinacion CBI','Edificio \"H\". 1er. Piso'),(5,'Cubículo P','Edificio \"HO\". Planta baja.'),(6,'Area de nuevas tecnologias','Edificio \"HP\". Planta baja.');
 /*!40000 ALTER TABLE `espaciofis` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,7 +172,7 @@ CREATE TABLE `horarios` (
   KEY `fk_horarios_pelicula1_idx` (`pelicula_idpelicula`),
   CONSTRAINT `fk_horarios_cine1` FOREIGN KEY (`cine_idcine`) REFERENCES `cine` (`idcine`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_horarios_pelicula1` FOREIGN KEY (`pelicula_idpelicula`) REFERENCES `pelicula` (`idpelicula`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -305,7 +307,7 @@ CREATE TABLE `profesor` (
   UNIQUE KEY `profesorNombre_UNIQUE` (`profesorNombre`),
   KEY `fk_profesor_espaciofis1_idx` (`espaciofis_idespaciofis`),
   CONSTRAINT `fk_profesor_espaciofis1` FOREIGN KEY (`espaciofis_idespaciofis`) REFERENCES `espaciofis` (`idespaciofis`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -314,7 +316,7 @@ CREATE TABLE `profesor` (
 
 LOCK TABLES `profesor` WRITE;
 /*!40000 ALTER TABLE `profesor` DISABLE KEYS */;
-INSERT INTO `profesor` VALUES (1,'Alejandro','55656','jkhkjh@llkjkj.com',1);
+INSERT INTO `profesor` VALUES (1,'Fort Chavez Liliana','53189401','fcl@azc.uam.mx',2),(2,'Puerta Huerta Jose Pedro Antonio','53189071','phjpa@azc.uam.mx',3),(3,'Suverza Ramirez Hector','53189116','srh@azc.uam.mx',4),(4,'Arredondo Vega José Javier','53189189 ext. 5507','avjj@azc.uam.mx',5),(5,'Gamez Alatorre Rosalba','53189366','gar@azc.uam.mx',6);
 /*!40000 ALTER TABLE `profesor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -377,4 +379,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-29  7:03:43
+-- Dump completed on 2016-09-01 23:55:50
